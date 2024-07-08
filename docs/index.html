@@ -18,7 +18,8 @@
         background-color: #111;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
+        padding-top: 10px;
+	padding-bottom: 50px;
     }
     .sidebar a {
         padding: 10px 15px;
@@ -31,6 +32,14 @@
     .sidebar a:hover {
         color: #f1f1f1;
     }
+    .sidebar h1 {
+        padding-top:10px;
+        text-decoration: none;
+        font-size: 18px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
     .main {
         transition: margin-left .5s;
         padding: 16px;
@@ -42,6 +51,16 @@
         font-size: 20px;
         cursor: pointer;
     }
+
+    #searchInput {
+      width: 300px;
+      padding: 8px;
+    }
+  
+    #results {
+      margin-top: 20px;
+    }
+
 </style>
 </head>
 <body>
@@ -50,35 +69,43 @@
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" onclick="closeNav()">× Close</a>
-  <a href="#">Linux</a>
+  <input type="text" id="searchInput" placeholder="Search documents...">
+  <div id="results"></div>
+  <h1>Linux</h1>
   <a href="#">- Ubuntu</a>
   <a href="#">- Parrot</a>
   <a href="#">- Kali</a>
   <a href="#">- Redhat</a>
   <a href="#">- Other</a>
-  <a href="#">Windows</a>
+  <h1>Windows</h1>
   <a href="#">- Windows 10</a>
   <a href="#">- Windows AD</a>
   <a href="#">- Other</a>
-  <a href="#">Firewall</a>
+  <h1>Firewall</h1>
   <a href="#">- Pfsense</a>
   <a href="#">- Onion</a>
   <a href="#">- UFW</a>
   <a href="#">- Other</a>
-  <a href="#">Help</a>
+  <h1>Help</h1>
   <a href="#">- Linux Domain Join</a>
   <a href="#">- Windows Domain Join</a>
   <a href="#">- Device Hardening</a>
   <a href="#">- MSC</a>
-  <a href="#">Contact</a>
+  <h1>Contact</h1>
   <a href="mailto:E@mail.com">Email: E@mail.com</a>
   <a href="Dummy https:// ref">BlueDocs: [Link]</a>
+  <br>
 </div>
+
 
 <div class="main">
   <h2>Navigation Sidebar Example</h2>
   <p>Click on the hamburger icon on the top left to open the sidebar.</p>
 </div>
+
+
+
+
 
 <script>
 function openNav() {
@@ -90,6 +117,48 @@ function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
     document.querySelector(".main").style.marginLeft = "0";
 }
+
+/*****************************************/
+document.addEventListener("DOMContentLoaded", function() {
+  var searchData;
+
+  // Fetch the JSON data on page load
+  fetch('ref/search.json')
+    .then(response => response.json())
+    .then(data => {
+      searchData = data;  // Store fetched data
+    })
+    .catch(error => console.error('Error loading the JSON data:', error));
+
+  // Event listener for search input
+  document.getElementById('searchInput').addEventListener('keyup', function() {
+    var searchQuery = this.value.toLowerCase();
+
+    // Clear previous results
+    var resultsContainer = document.getElementById('results');
+    resultsContainer.innerHTML = '';
+
+    // Check if the search query is not empty
+    if (searchQuery.trim() !== '') {
+      var filteredData = searchData.filter(function(doc) {
+        return doc.title.toLowerCase().includes(searchQuery) || doc.description.toLowerCase().includes(searchQuery);
+      });
+
+      displayResults(filteredData);
+    }
+  });
+
+  function displayResults(filteredData) {
+    var resultsContainer = document.getElementById('results');
+
+    filteredData.forEach(function(doc) {
+      var element = document.createElement('div');
+      element.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
+      resultsContainer.appendChild(element);
+    });
+  }
+});
+
 </script>
 
 </body>
