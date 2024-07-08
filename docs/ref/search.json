@@ -2,27 +2,27 @@
   {
     "title": "Active Directory Master PDF",
     "description": "A complete guide for Windows Active Directory server. This guide includes, Make it a domain controller, How to add users, How to add Groups. # AD, Active Directory, # Windows server, # Windows-Server",
-    "url": "/ActiveDirectory/ADFullGuide.pdf"
+    "url": "#"
   },
   {
     "title": "Employee Handbook",
     "description": "The comprehensive guide for new and existing employees, detailing company policies, work culture, and employee benefits.",
-    "url": "/resources/employee-handbook.pdf"
+    "url": "#"
   },
   {
     "title": "Product Catalog",
     "description": "Our full range of products for 2024, including specifications, pricing, and availability.",
-    "url": "/catalogs/2024-product-catalog.pdf"
+    "url": "#"
   },
   {
     "title": "Safety Procedures",
     "description": "Detailed safety procedures and guidelines to ensure a safe working environment for all employees.",
-    "url": "/safety/safety-procedures.pdf"
+    "url": "#"
   },
   {
     "title": "Marketing Strategy",
     "description": "A document outlining our marketing strategies, target demographics, and advertising channels for the upcoming year.",
-    "url": "/marketing/2023-strategy-document.pdf"
+    "url": "#"
   }
 ]
 
