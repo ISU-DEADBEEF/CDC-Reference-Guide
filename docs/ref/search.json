@@ -1,28 +1,215 @@
 [
   {
-    "title": "Active Directory Master PDF",
-    "description": "A complete guide for Windows Active Directory server. This guide includes, Make it a domain controller, How to add users, How to add Groups. # AD, Active Directory, # Windows server, # Windows-Server",
+    "title": "Overview of Active Directory",
+    "description": "Explore the fundamental concepts of Active Directory (AD), including its definition, roles, and crucial function in managing network resources and services. Search terms: Active Directory basics, AD roles, network management with AD, AD introduction, what is AD.",
     "url": "#"
   },
   {
-    "title": "Employee Handbook",
-    "description": "The comprehensive guide for new and existing employees, detailing company policies, work culture, and employee benefits.",
+    "title": "Importance of Security in AD",
+    "description": "Understand the pivotal role of security within Active Directory and its impact on safeguarding network resources. Delve into strategies for enhancing AD security. Search terms: AD security importance, network security Active Directory, secure AD practices, AD security enhancement.",
     "url": "#"
   },
   {
-    "title": "Product Catalog",
-    "description": "Our full range of products for 2024, including specifications, pricing, and availability.",
+    "title": "Installing Active Directory",
+    "description": "Detailed guidance on installing Active Directory on a server, including pre-installation requirements and step-by-step setup procedures. Search terms: How to install AD, AD setup steps, installing AD on Windows Server, Active Directory installation guide.",
     "url": "#"
   },
   {
-    "title": "Safety Procedures",
-    "description": "Detailed safety procedures and guidelines to ensure a safe working environment for all employees.",
+    "title": "Active Directory Domains",
+    "description": "Comprehensive explanation of domains within Active Directory, detailing their structure, purpose, and administration. Search terms: AD domains setup, understanding AD domains, Active Directory domain management, AD domain configuration.",
     "url": "#"
   },
   {
-    "title": "Marketing Strategy",
-    "description": "A document outlining our marketing strategies, target demographics, and advertising channels for the upcoming year.",
+    "title": "Forest and Domain Functional Levels",
+    "description": "Explore the significance of forest and domain functional levels in AD, focusing on their impact on compatibility and security features across your network. Search terms: AD forest levels, domain functional levels AD, Active Directory compatibility, AD security features.",
     "url": "#"
-  }
-]
+  },
+  {
+    "title": "Creating User Accounts",
+    "description": "Step-by-step process for securely creating user accounts in Active Directory, highlighting best practices for initial setup and security. Search terms: Creating AD user accounts, how to add users in AD, secure user account setup in Active Directory, managing AD accounts.",
+    "url": "#"
+  },
+  {
+    "title": "Managing User Attributes",
+    "description": "Insights into managing user attributes in AD, including how to modify and utilize these attributes effectively for user management. Search terms: Manage AD user attributes, Active Directory user properties, modifying user details in AD, user management in AD.",
+    "url": "#"
+  },
+  {
+    "title": "Password Policies",
+    "description": "Guidelines for setting up strong password policies in Active Directory to enhance security and mitigate unauthorized access. Search terms: AD password policies, setting strong AD passwords, password security in Active Directory, configuring AD password rules.",
+    "url": "#"
+  },
+  {
+    "title": "Account Lockout Policies",
+    "description": "Detailed look at configuring account lockout policies in Active Directory to prevent brute force attacks and secure user accounts. Search terms: AD account lockout setup, preventing brute force in AD, Active Directory security policies, setting AD lockout parameters.",
+    "url": "#"
+  },
+  {
+    "title": "Creating and Managing Groups",
+    "description": "Comprehensive guide to creating and managing groups in Active Directory, including the differences between security and distribution groups. Search terms: How to create groups in AD, managing AD groups, Active Directory group setup, Windows AD groups, add groups in Active Directory.",
+    "url": "#"
+  },
+  {
+    "title": "Best Practices for Group Management",
+    "description": "Expert advice on managing groups within Active Directory to simplify permissions management and enhance security. Search terms: AD group management best practices, using groups in Active Directory, Active Directory groups tips, security group management in AD.",
+    "url": "#"
+  },
+  {
+    "title": "Joining Computers to Domain",
+    "description": "Instructions for joining computers to an Active Directory domain, covering both Windows and non-Windows devices. Search terms: Join computers to AD domain, domain joining steps, adding Windows computers to AD, Active Directory domain joining.",
+    "url": "#"
+  },
+  {
+    "title": "Joining Non-Windows Devices",
+    "description": "Procedure for integrating non-Windows devices into an Active Directory environment, including configuration and troubleshooting tips. Search terms: Linux in AD, joining Linux to Active Directory, AD integration for non-Windows, configure AD for Linux.",
+    "url": "#"
+  },
+  {
+    "title": "Organizational Units (OUs)",
+    "description": "Detailed overview of using Organizational Units in Active Directory to manage users, groups, and devices efficiently. Search terms: Setting up AD OUs, managing AD with Organizational Units, Active Directory OUs setup, how to use OUs in AD.",
+    "url": "#"
+  },
+  {
+    "title": "Understanding Permissions",
+    "description": "Explore the complexities of permissions in Active Directory, including how rights are assigned and managed across the network. Search terms: AD permissions management, Active Directory rights, managing permissions in AD, AD access control.",
+    "url": "#"
+  },
+  {
+    "title": "Implementing Least Privilege",
+    "description": "Principles of the least privilege strategy in Active Directory, focusing on minimizing user access rights to enhance security. Search terms: Least privilege in Active Directory, implementing minimal access in AD, AD security practices, least access in AD.",
+    "url": "#"
+  },
+  {
+    "title": "Group Policy Objects (GPOs)",
+    "description": "Utilizing Group Policy Objects in Active Directory to enforce security settings and manage configurations across the network. Search terms: Setting up GPOs in AD, managing AD with Group Policy, Active Directory GPO guide, configuring GPOs in AD.",
+    "url": "#"
+  },
+  {
+    "title": "Active Directory Administrative Center",
+    "description": "Features and benefits of using the Active Directory Administrative Center for managing AD tasks more efficiently. Search terms: AD Administrative Center features, using ADAC in Active Directory, managing AD with ADAC, AD tools and utilities.",
+    "url": "#"
+  },
+  {
+    "title": "Windows Server Update Services (WSUS)",
+    "description": "Role of Windows Server Update Services in maintaining system security through regular updates and patches. Search terms: Using WSUS in AD, WSUS for Windows updates, configuring WSUS in Active Directory, WSUS patches management.",
+    "url": "#"
+  },
+  {
+    "title": "Monitoring and Auditing",
+    "description": "Best practices for monitoring and auditing Active Directory to detect and respond to security breaches effectively. Search terms: Monitoring AD for security, auditing Active Directory setup, AD security checks, Active Directory auditing tools.",
+    "url": "#"
+  },
+  {
+    "title": "Backup Strategies",
+    "description": "Strategies and best practices for backing up Active Directory to ensure data recovery and continuity in emergencies. Search terms: Active Directory backup strategies, how to backup AD, AD data recovery methods, ensuring AD data safety.",
+    "url": "#"
+  },
+  {
 
+    "title": "Disaster Recovery Plans",
+    "description": "Creating and implementing effective disaster recovery plans for Active Directory to minimize downtime and data loss. Search terms: AD disaster recovery planning, Active Directory recovery solutions, AD emergency response, recovering AD after failure.",
+    "url": "#"
+  },
+  {
+    "title": "Multi-Factor Authentication (MFA)",
+    "description": "Implementing Multi-Factor Authentication in Active Directory to enhance security and verify user identities. Search terms: Setting up MFA in AD, Active Directory MFA setup, AD secure login methods, enhancing AD security with MFA.",
+    "url": "#"
+  },
+  {
+    "title": "Encryption",
+    "description": "The importance of applying encryption within Active Directory to protect data integrity and confidentiality. Search terms: Encrypting data in AD, Active Directory encryption methods, securing AD data with encryption, AD data protection techniques.",
+    "url": "#"
+  },
+  {
+    "title": "Secure LDAP (LDAPS)",
+    "description": "Configuring Secure LDAP to enhance the security of communications between your network and Active Directory. Search terms: Setting up LDAPS in AD, securing LDAP communications, LDAPS in Active Directory, Active Directory secure connection.",
+    "url": "#"
+  },
+  {
+    "title": "Compliance Requirements",
+    "description": "Understanding the compliance landscape for Active Directory, including key regulations and how to meet them. Search terms: AD compliance requirements, Active Directory legal compliance, adhering to regulations in AD, AD compliance management.",
+    "url": "#"
+  },
+  {
+    "title": "Auditing Active Directory",
+    "description": "Comprehensive techniques and tools for auditing Active Directory to ensure compliance and operational integrity. Search terms: Auditing techniques for AD, tools for AD auditing, ensuring AD compliance, Active Directory audit practices.",
+    "url": "#"
+  },
+  {
+    "title": "Common AD Issues and Resolutions",
+    "description": "A list of common problems encountered in Active Directory and detailed solutions for addressing them. Search terms: Troubleshooting AD, solving common AD issues, fixing Active Directory problems, AD problem solutions.",
+    "url": "#"
+  },
+
+
+
+
+
+
+
+
+
+
+  
+    {
+      "title": "Security Features of Windows 10",
+      "description": "Explore key security features in Windows 10, including Windows Hello for biometric authentication, BitLocker for disk encryption, integrated Windows Defender Antivirus, Windows Information Protection to prevent data leaks, and Device Guard for trusted application enforcement. Search terms: Windows 10 security features, Windows Hello, BitLocker usage, Windows Defender Antivirus, secure Windows 10 settings, Device Guard benefits.",
+      "url": "#"
+    },
+    {
+      "title": "User Access Control",
+      "description": "Understanding User Access Control in Windows 10, focusing on Account Control Settings that apply the principle of least privilege and encourage Multi-factor Authentication (MFA) to secure user authentication processes. Search terms: Windows 10 user access control, account control settings, MFA in Windows 10, enhancing authentication in Windows.",
+      "url": "#"
+    },
+    {
+      "title": "Update Management",
+      "description": "The importance of maintaining up-to-date systems through Windows Update and managing enterprise updates using Windows Server Update Services (WSUS). Search terms: Windows 10 updates, using WSUS, Windows 10 patch management, updating Windows 10, Windows Update settings.",
+      "url": "#"
+    },
+    {
+      "title": "Network Security",
+      "description": "Strategies for enhancing network security in Windows 10, including configuring Windows Firewall and leveraging Isolated User Mode to protect sensitive data. Search terms: Windows 10 firewall configuration, network protection in Windows, isolated user mode, securing Windows 10 network.",
+      "url": "#"
+    },
+    {
+      "title": "Security Policies and Best Practices",
+      "description": "Implementing critical security policies in Windows 10 using Group Policy and Local Security Policy settings, and applying Microsoft’s security baselines. Search terms: Windows 10 security policies, group policy settings, local security policies, security best practices for Windows.",
+      "url": "#"
+    },
+    {
+      "title": "Data Protection and Privacy",
+      "description": "Data protection measures in Windows 10 such as Data Loss Prevention (DLP) policies and file encryption using the Encrypting File System (EFS). Search terms: Windows 10 data protection, using DLP, EFS encryption, privacy settings in Windows.",
+      "url": "#"
+    },
+    {
+      "title": "Monitoring and Logging",
+      "description": "Using Event Viewer and Advanced Threat Protection (ATP) in Windows 10 to monitor security logs and respond to advanced threats effectively. Search terms: Windows 10 monitoring, security logging with Event Viewer, using ATP in Windows, Windows 10 security logs.",
+      "url": "#"
+    },
+    {
+      "title": "System and Application Hardening",
+      "description": "Hardening Windows 10 systems by disabling unnecessary services, securing browser settings, and applying least functionality principles. Use of third-party security tools for additional protection. Search terms: Windows 10 hardening techniques, securing Windows applications, Windows system hardening, third-party security tools for Windows.",
+      "url": "#"
+    },
+    {
+      "title": "Vulnerability Management",
+      "description": "Conducting regular vulnerability scans and implementing a robust patch management strategy in Windows 10 to mitigate security risks. Search terms: Windows 10 vulnerability management, scanning for vulnerabilities, patch management in Windows, securing Windows against threats.",
+      "url": "#"
+    },
+    {
+      "title": "Incident Response",
+      "description": "Developing a comprehensive incident response plan for Windows 10, including training IT staff through regular exercises to handle potential security incidents effectively. Search terms: Windows 10 incident response, developing incident plans, training for security incidents, managing incidents in Windows.",
+      "url": "#"
+    },
+    {
+      "title": "Compliance and Auditing",
+      "description": "Ensuring compliance with regulations such as GDPR and HIPAA in Windows 10 environments and using audit tools to maintain security standards. Search terms: Windows 10 compliance, auditing Windows environments, regulatory compliance in Windows, using audit tools.",
+      "url": "#"
+    },
+    {
+      "title": "Common Security Issues and Their Mitigations",
+      "description": "Addressing common security issues in Windows 10 such as ransomware, phishing attacks, and zero-day exploits with preventive measures and user education. Search terms: Windows 10 security issues, ransomware protection, phishing prevention in Windows, handling zero-day exploits in Windows.",
+      "url": "#"
+    }
+  
+]

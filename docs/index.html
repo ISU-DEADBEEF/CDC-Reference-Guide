@@ -133,15 +133,16 @@ document.addEventListener("DOMContentLoaded", function() {
   // Event listener for search input
   document.getElementById('searchInput').addEventListener('keyup', function() {
     var searchQuery = this.value.toLowerCase();
+    var keywords = searchQuery.split(/\s+/); // Split the search query into an array of keywords
 
     // Clear previous results
     var resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';
 
-    // Check if the search query is not empty
+    // Only proceed if there is a non-empty search query
     if (searchQuery.trim() !== '') {
       var filteredData = searchData.filter(function(doc) {
-        return doc.title.toLowerCase().includes(searchQuery) || doc.description.toLowerCase().includes(searchQuery);
+        return keywords.every(keyword => doc.title.toLowerCase().includes(keyword) || doc.description.toLowerCase().includes(keyword));
       });
 
       displayResults(filteredData);
@@ -151,11 +152,15 @@ document.addEventListener("DOMContentLoaded", function() {
   function displayResults(filteredData) {
     var resultsContainer = document.getElementById('results');
 
-    filteredData.forEach(function(doc) {
-      var element = document.createElement('div');
-      element.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
-      resultsContainer.appendChild(element);
-    });
+    if (filteredData.length > 0) {
+      filteredData.forEach(function(doc) {
+        var element = document.createElement('div');
+        element.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
+        resultsContainer.appendChild(element);
+      });
+    } else {
+      resultsContainer.innerHTML = '<div>No results found.</div>';
+    }
   }
 });
 
