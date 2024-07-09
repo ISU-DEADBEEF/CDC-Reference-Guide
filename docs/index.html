@@ -6,60 +6,80 @@
 <title>Navigation Sidebar</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
-    }
-    .sidebar {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 10px;
-	padding-bottom: 50px;
-    }
-    .sidebar a {
-        padding: 10px 15px;
-        text-decoration: none;
-        font-size: 16px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-    .sidebar a:hover {
-        color: #f1f1f1;
-    }
-    .sidebar h1 {
-        padding-top:10px;
-        text-decoration: none;
-        font-size: 18px;
-        color: #818181;
-        display: block;
-        transition: 0.3s;
-    }
-    .main {
-        transition: margin-left .5s;
-        padding: 16px;
-    }
-    #openBtn {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 20px;
-        cursor: pointer;
-    }
+    font-family: Arial, sans-serif;
+}
 
-    #searchInput {
-      width: 300px;
-      padding: 8px;
-    }
-  
-    #results {
-      margin-top: 20px;
-    }
+.sidebar {
+    height: 100%;
+    width: 0;  /* Sidebar starts hidden */
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;  /* Dark background for the sidebar */
+    overflow-x: hidden;
+    transition: 0.5s;  /* Smooth transition for opening/closing */
+    padding-top: 10px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;  /* Light grey text for links */
+    transition: 0.3s;  /* Smooth color transition for hover */
+}
+
+/* Specific targeting for links in menu sections to hide them */
+.sidebar .menu-section a {
+    display: none;  /* Hide links by default */
+}
+
+/* Display links when hovering over the menu section */
+.sidebar .menu-section:hover a {
+    display: block;
+}
+
+/* Specific styles for hover effects on links */
+.sidebar a:hover {
+    color: #f1f1f1;  /* Brighter text on hover */
+}
+
+.sidebar h1 {
+    padding-top: 10px;
+    font-size: 18px;
+    color: #818181;  /* Light grey text for headers */
+    display: block;
+    transition: 0.3s;  /* Smooth transition for effects */
+    cursor: pointer;  /* Pointer cursor on hover */
+}
+
+.main {
+    transition: margin-left .5s;  /* Smooth transition for main content area */
+    padding: 16px;
+}
+
+#openBtn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    cursor: pointer;  /* Pointer cursor on the open button */
+}
+
+#searchInput {
+    width: 300px;
+    padding: 8px;
+}
+
+#results, #results a {
+    display: block; /* Ensures content within the results container is always displayed */
+    color: #f1f1f1; /* Ensures the text color is visible against the sidebar background */
+}
+
+
 
 </style>
 </head>
@@ -71,31 +91,51 @@
   <a href="javascript:void(0)" onclick="closeNav()">× Close</a>
   <input type="text" id="searchInput" placeholder="Search documents...">
   <div id="results"></div>
-  <h1>Linux</h1>
-  <a href="#">- Ubuntu</a>
-  <a href="#">- Parrot</a>
-  <a href="#">- Kali</a>
-  <a href="#">- Redhat</a>
-  <a href="#">- Other</a>
-  <h1>Windows</h1>
-  <a href="#">- Windows 10</a>
-  <a href="#">- Windows AD</a>
-  <a href="#">- Other</a>
-  <h1>Firewall</h1>
-  <a href="#">- Pfsense</a>
-  <a href="#">- Onion</a>
-  <a href="#">- UFW</a>
-  <a href="#">- Other</a>
-  <h1>Help</h1>
-  <a href="#">- Linux Domain Join</a>
-  <a href="#">- Windows Domain Join</a>
-  <a href="#">- Device Hardening</a>
-  <a href="#">- MSC</a>
-  <h1>Contact</h1>
-  <a href="mailto:E@mail.com">Email: E@mail.com</a>
-  <a href="Dummy https:// ref">BlueDocs: [Link]</a>
-  <br>
+  
+  <div class="menu-section">
+      <h1>Active Directory</h1>
+      <a href="#">- Policies</a>
+      <a href="#">- Connecting devices</a>
+  </div>
+
+  <div class="menu-section">
+      <h1>Linux</h1>
+      <a href="#">- Ubuntu</a>
+      <a href="#">- Parrot</a>
+      <a href="#">- Kali</a>
+      <a href="#">- Redhat</a>
+      <a href="#">- Other</a>
+  </div>
+
+  <div class="menu-section">
+      <h1>Windows</h1>
+      <a href="#">- Windows 10</a>
+      <a href="#">- Other</a>
+  </div>
+
+  <div class="menu-section">
+      <h1>Firewall</h1>
+      <a href="#">- Pfsense</a>
+      <a href="#">- Onion</a>
+      <a href="#">- UFW</a>
+      <a href="#">- Other</a>
+  </div>
+
+  <div class="menu-section">
+      <h1>Help</h1>
+      <a href="#">- Linux Domain Join</a>
+      <a href="#">- Windows Domain Join</a>
+      <a href="#">- Device Hardening</a>
+      <a href="#">- MSC</a>
+  </div>
+
+  <div class="menu-section">
+      <h1>Contact</h1>
+      <a href="mailto:E@mail.com">Email: E@mail.com</a>
+      <a href="Dummy https:// ref">BlueDocs: [Link]</a>
+  </div>
 </div>
+
 
 
 <div class="main">
@@ -145,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return keywords.every(keyword => doc.title.toLowerCase().includes(keyword) || doc.description.toLowerCase().includes(keyword));
       });
 
-      displayResults(filteredData);
+      displayResults(filteredData); // Call displayResults function
     }
   });
 
@@ -159,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
         resultsContainer.appendChild(element);
       });
     } else {
-      resultsContainer.innerHTML = '<div>No results found.</div>';
+      resultsContainer.innerHTML = '<a>No results found.</a>';
     }
   }
 });
