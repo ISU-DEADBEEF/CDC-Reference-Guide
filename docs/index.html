@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navigation Sidebar</title>
+<title>ISU CDC Help</title>
 <style>
     body {
     font-family: Arial, sans-serif;
+    background-color: rgb(123, 202, 255);
 }
+
+/*********** SIDE BAR *******/
 
 .sidebar {
     height: 100%;
@@ -56,10 +59,7 @@
     cursor: pointer;  /* Pointer cursor on hover */
 }
 
-.main {
-    transition: margin-left .5s;  /* Smooth transition for main content area */
-    padding: 16px;
-}
+/************** Search Bar *********/
 
 #openBtn {
     position: absolute;
@@ -79,7 +79,17 @@
     color: #f1f1f1; /* Ensures the text color is visible against the sidebar background */
 }
 
+/********** MAIN CS ********/
+.main {
+    transition: margin-left .5s;  /* Smooth transition for main content area */
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 
+.main .title {
+  background-color: rgb(31, 31, 144);
+}
 
 </style>
 </head>
@@ -88,7 +98,7 @@
 <div id="openBtn" onclick="openNav()">☰ Open Sidebar</div>
 
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" onclick="closeNav()">× Close</a>
+  <a href="javascript:void(0)" onclick="closeNav()">× >></a>
   <input type="text" id="searchInput" placeholder="Search documents...">
   <div id="results"></div>
   
@@ -123,24 +133,23 @@
 
   <div class="menu-section">
       <h1>Help</h1>
-      <a href="#">- Linux Domain Join</a>
-      <a href="#">- Windows Domain Join</a>
-      <a href="#">- Device Hardening</a>
-      <a href="#">- MSC</a>
+      <a href="https://docs.iseage.org/rules/current/" target="_blank">BlueDocs Rules</a>
   </div>
 
   <div class="menu-section">
       <h1>Contact</h1>
       <a href="mailto:E@mail.com">Email: E@mail.com</a>
-      <a href="Dummy https:// ref">BlueDocs: [Link]</a>
   </div>
 </div>
 
 
 
 <div class="main">
-  <h2>Navigation Sidebar Example</h2>
-  <p>Click on the hamburger icon on the top left to open the sidebar.</p>
+  <div class="title">
+    <h1>CDC Help Desk</h1>
+    <h3>For all your CDC questions</h3>
+  </div>
+ 
 </div>
 
 
@@ -150,12 +159,12 @@
 <script>
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
-    document.querySelector(".main").style.marginLeft = "250px";
+    //document.querySelector(".main").style.marginLeft = "250px";
 }
 
 function closeNav() {
     document.getElementById("mySidebar").style.width = "0";
-    document.querySelector(".main").style.marginLeft = "0";
+    //document.querySelector(".main").style.marginLeft = "0";
 }
 
 /*****************************************/
@@ -208,4 +217,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
