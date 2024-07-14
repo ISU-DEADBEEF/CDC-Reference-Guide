@@ -4,216 +4,202 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ISU CDC Help</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
     body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(123, 202, 255);
-}
+        font-family: Arial, sans-serif;
+    }
 
-/*********** SIDE BAR *******/
+    .sidebar {
+    background-color: #111; /* Dark background for the sidebar */
+    color: #818181; /* Light grey text */
+  }
 
-.sidebar {
-    height: 100%;
-    width: 0;  /* Sidebar starts hidden */
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;  /* Dark background for the sidebar */
-    overflow-x: hidden;
-    transition: 0.5s;  /* Smooth transition for opening/closing */
-    padding-top: 10px;
-    padding-bottom: 50px;
-    padding-left: 10px;
-}
+  /* Hover effect for all sidebar links */
+  .sidebar a {
+    color: #818181; /* Default light grey text for links */
+    transition: color 0.3s, background-color 0.3s; /* Smooth transition for color and background */
+  }
 
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #818181;  /* Light grey text for links */
-    transition: 0.3s;  /* Smooth color transition for hover */
-}
+  .sidebar a:hover {
+    color: #ffffff; /* Bright white text on hover */
+    background-color: #333333; /* Slightly lighter background on hover */
+  }
 
-/* Specific targeting for links in menu sections to hide them */
-.sidebar .menu-section a {
-    display: none;  /* Hide links by default */
-}
+  .menu-item {
+    cursor: pointer; /* Pointer cursor on hover */
+  }
 
-/* Display links when hovering over the menu section */
-.sidebar .menu-section:hover a {
-    display: block;
-}
+  .menu-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
 
-/* Specific styles for hover effects on links */
-.sidebar a:hover {
-    color: #f1f1f1;  /* Brighter text on hover */
-}
+  .dropdown {
+    position: relative; /* Adjust relative to its normal position */
+    top: -50px; /* Move up by 50px */
+    z-index: 1000; /* Ensures it stays on top of other content */
+  }
 
-.sidebar h1 {
-    padding-top: 10px;
-    font-size: 18px;
-    color: #818181;  /* Light grey text for headers */
-    display: block;
-    transition: 0.3s;  /* Smooth transition for effects */
-    cursor: pointer;  /* Pointer cursor on hover */
-}
 
-/************** Search Bar *********/
+  #results a {
+    color: #ffffff; /* White text for search results */
+    text-decoration: none; /* Removes underline from links */
+    display: block; /* Makes each link block for better clickability */
+    padding: 5px 10px; /* Adds padding for better spacing */
+  }
 
-#openBtn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 20px;
-    cursor: pointer;  /* Pointer cursor on the open button */
-}
-
-#searchInput {
-    width: 300px;
-    padding: 8px;
-}
-
-#results, #results a {
-    display: block; /* Ensures content within the results container is always displayed */
-    color: #f1f1f1; /* Ensures the text color is visible against the sidebar background */
-}
-
-/********** MAIN CS ********/
-.main {
-    transition: margin-left .5s;  /* Smooth transition for main content area */
-    display: block;
-    width: 100%;
-    text-align: center;
-}
-
-.main .title {
-  background-color: rgb(31, 31, 144);
-}
+  #results a:hover {
+    background-color: #333333; /* Adds background color on hover for consistency */
+  }
 
 </style>
 </head>
 <body>
 
-<div id="openBtn" onclick="openNav()">☰ Open Sidebar</div>
+    
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" onclick="closeNav()">× >></a>
-  <input type="text" id="searchInput" placeholder="Search documents...">
-  <div id="results"></div>
-  
-  <div class="menu-section">
-      <h1>Active Directory</h1>
-      <a href="#">- Policies</a>
-      <a href="#">- Connecting devices</a>
-  </div>
-
-  <div class="menu-section">
-      <h1>Linux</h1>
-      <a href="#">- Ubuntu</a>
-      <a href="#">- Parrot</a>
-      <a href="#">- Kali</a>
-      <a href="#">- Redhat</a>
-      <a href="#">- Other</a>
-  </div>
-
-  <div class="menu-section">
-      <h1>Windows</h1>
-      <a href="#">- Windows 10</a>
-      <a href="#">- Other</a>
-  </div>
-
-  <div class="menu-section">
-      <h1>Firewall</h1>
-      <a href="#">- Pfsense</a>
-      <a href="#">- Onion</a>
-      <a href="#">- UFW</a>
-      <a href="#">- Other</a>
-  </div>
-
-  <div class="menu-section">
-      <h1>Help</h1>
-      <a href="https://docs.iseage.org/rules/current/" target="_blank">BlueDocs Rules</a>
-  </div>
-
-  <div class="menu-section">
-      <h1>Contact</h1>
-      <a href="mailto:E@mail.com">Email: E@mail.com</a>
-  </div>
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div id="openBtn" onclick="openNav()">☰ Open Sidebar</div>
+            <!-- Sidebar -->
+            <div id="mySidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar" style="width: 0px; height: 100vh; transition: .2s; visibility: hidden;">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-4">CDC Help Desk</span>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto">
+                    <input type="text" id="searchInput" placeholder="Search documents...">
+                    <div id="results" ></div>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white" aria-current="page">
+                            Active Directory
+                        </a>
+                        <ul class="nav flex-column ms-2">
+                            <li><a href="#" class="nav-link text-white">- Policies</a></li>
+                            <li><a href="#" class="nav-link text-white">- Connecting devices</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            Linux
+                        </a>
+                        <ul class="nav flex-column ms-2">
+                            <li><a href="#" class="nav-link text-white">- Ubuntu</a></li>
+                            <li><a href="#" class="nav-link text-white">- Parrot</a></li>
+                            <li><a href="#" class="nav-link text-white">- Kali</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            Windows
+                        </a>
+                        <ul class="nav flex-column ms-2">
+                            <li><a href="#" class="nav-link text-white">- Windows 10</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">
+                            Firewall
+                        </a>
+                        <ul class="nav flex-column ms-2">
+                            <li><a href="#" class="nav-link text-white">- Pfsense</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">Help</a></li>
+                        <li><a class="dropdown-item" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9" href="javascript:void(0)" onclick="closeNav()">
+            <!-- Main content -->
+            <div class="p-4">
+                <h1>Welcome to the CDC Help Desk</h1>
+                <p>For all your CDC questions</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-
-<div class="main">
-  <div class="title">
-    <h1>CDC Help Desk</h1>
-    <h3>For all your CDC questions</h3>
-  </div>
- 
-</div>
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 <script>
-function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-    //document.querySelector(".main").style.marginLeft = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-    //document.querySelector(".main").style.marginLeft = "0";
-}
-
-/*****************************************/
-document.addEventListener("DOMContentLoaded", function() {
-  var searchData;
-
-  // Fetch the JSON data on page load
-  fetch('ref/search.json')
-    .then(response => response.json())
-    .then(data => {
-      searchData = data;  // Store fetched data
-    })
-    .catch(error => console.error('Error loading the JSON data:', error));
-
-  // Event listener for search input
-  document.getElementById('searchInput').addEventListener('keyup', function() {
-    var searchQuery = this.value.toLowerCase();
-    var keywords = searchQuery.split(/\s+/); // Split the search query into an array of keywords
-
-    // Clear previous results
-    var resultsContainer = document.getElementById('results');
-    resultsContainer.innerHTML = '';
-
-    // Only proceed if there is a non-empty search query
-    if (searchQuery.trim() !== '') {
-      var filteredData = searchData.filter(function(doc) {
-        return keywords.every(keyword => doc.title.toLowerCase().includes(keyword) || doc.description.toLowerCase().includes(keyword));
-      });
-
-      displayResults(filteredData); // Call displayResults function
+    function openNav() {
+        document.getElementById("mySidebar").style.width = "250px";
+        document.getElementById("mySidebar").style.visibility = "visible";
+        //document.querySelector(".main").style.marginLeft = "250px";
     }
-  });
-
-  function displayResults(filteredData) {
-    var resultsContainer = document.getElementById('results');
-
-    if (filteredData.length > 0) {
-      filteredData.forEach(function(doc) {
-        var element = document.createElement('div');
-        element.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
-        resultsContainer.appendChild(element);
-      });
-    } else {
-      resultsContainer.innerHTML = '<a>No results found.</a>';
+    
+    function closeNav() {
+        document.getElementById("mySidebar").style.visibility = "hidden";
+        document.getElementById("mySidebar").style.width = "0";
+        //document.querySelector(".main").style.marginLeft = "0";
     }
-  }
-});
-
+    
+    /*****************************************/
+    document.addEventListener("DOMContentLoaded", function() {
+      var searchData;
+    
+      // Fetch the JSON data on page load
+      fetch('ref/search.json')
+        .then(response => response.json())
+        .then(data => {
+          searchData = data;  // Store fetched data
+        })
+        .catch(error => console.error('Error loading the JSON data:', error));
+    
+      // Event listener for search input
+      document.getElementById('searchInput').addEventListener('keyup', function() {
+        var searchQuery = this.value.toLowerCase();
+        var keywords = searchQuery.split(/\s+/); // Split the search query into an array of keywords
+    
+        // Clear previous results
+        var resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = '';
+    
+        // Only proceed if there is a non-empty search query
+        if (searchQuery.trim() !== '') {
+          var filteredData = searchData.filter(function(doc) {
+            return keywords.every(keyword => doc.title.toLowerCase().includes(keyword) || doc.description.toLowerCase().includes(keyword));
+          });
+    
+          displayResults(filteredData); // Call displayResults function
+        }
+      });
+    
+      function displayResults(filteredData) {
+        var resultsContainer = document.getElementById('results');
+    
+        if (filteredData.length > 0) {
+          filteredData.forEach(function(doc) {
+            var element = document.createElement('div');
+            element.innerHTML = `<a href="${doc.url}">${doc.title}</a>`;
+            resultsContainer.appendChild(element);
+          });
+        } else {
+          resultsContainer.innerHTML = '<a>No results found.</a>';
+        }
+      }
+    });
+    
 </script>
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
